@@ -35,12 +35,16 @@ def open_file():
             questions.append(row['question'])
             answer_texts.append(row['T'])
             is_corrects.append(1)
-            questions.append(row['question'])
-            answer_texts.append(row['F'])
-            is_corrects.append(0)
-            questions.append(row['question'])
-            answer_texts.append(row['F.1'])
-            is_corrects.append(0)
+
+            if pd.notna(row['F']):
+                questions.append(row['question'])
+                answer_texts.append(row['F'])
+                is_corrects.append(0)
+
+            if pd.notna(row['F.1']):
+                questions.append(row['question'])
+                answer_texts.append(row['F.1'])
+                is_corrects.append(0)
 
             if pd.notna(row['F.2']):
                 questions.append(row['question'])
