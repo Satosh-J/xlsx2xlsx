@@ -1,6 +1,7 @@
 
 # Import the required libraries
 from tkinter import *
+from pathlib import Path
 from tkinter import ttk, filedialog
 import pandas as pd
 from tkinter.messagebox import showinfo
@@ -55,6 +56,7 @@ def open_file():
         out_df['question'] = questions
         out_df['is_correct'] = is_corrects
 
+        Path('result').mkdir(parents=True, exist_ok=True)
         out_df.to_excel(".\\result\\Answer Options.xlsx")
         # out_df.to_excel('.result\Answer Options.xlsx')
         print(out_df)
