@@ -7,6 +7,7 @@ name = "pypi"
 pandas = "*"
 simplejson = "*"
 openpyxl = "*"
+py2exe = "*"
 
 [dev-packages]
 
